@@ -1,4 +1,7 @@
 import Navbar from './src/components/Navbar/Navbar';
+import PetSearchBar from './src/components/PetSearchBar/PetSearchBar';
+import Container from './src/components/Container/Container';
+import PetCard from './src/components/PetCard/PetCard';
 import StorybookUI from './storybook';
 import {
   SafeAreaProvider,
@@ -17,6 +20,12 @@ const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   const insets = useSafeAreaInsets();
+  const petPhoto = require('./assets/cat.jpg');
+  const infoMock = {
+    name: 'Snowflake',
+    breed: 'Selkirk Rex',
+    owner: { firstName: 'John', lastName: 'Connor', phone: '123-123-123' }
+  };
 
   return (
     <View
@@ -29,34 +38,34 @@ const HomeScreen = () => {
       }}
     >
       <Navbar title="Pawshionist" />
-      <Image style={{ width: '100%' }} source={sample} resizeMode={'cover'} />
+      <Container>
+        <PetSearchBar />
+        <PetCard info={infoMock} photo={petPhoto}/>
+        <PetCard info={infoMock} photo={petPhoto}/>
+      </Container>
     </View>
   );
 };
 
-const DetailsScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Details Screen</Text>
-  </View>
-);
+const DetailsScreen = () => <Text>test</Text>
 
 function App() {
   return (
     <SafeAreaProvider>
-      <GestureHandlerRootView>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName="Home"
+            initialRouteName="Home1"
             screenOptions={{ headerShown: false }}
           >
-            <Stack.Screen name="Home">
+            <Stack.Screen name="Home2">
               {() => (
                 <Tab.Navigator
-                  initialRouteName="Analitics"
+                  initialRouteName="Navigate"
                   screenOptions={{ headerShown: false }}
                 >
-                  <Tab.Screen name="Analitics" component={HomeScreen} />
-                  <Tab.Screen name="Profile" component={DetailsScreen} />
+                  <Tab.Screen name="Home" component={HomeScreen} />
+                  <Tab.Screen name="Register" component={DetailsScreen} />
                 </Tab.Navigator>
               )}
             </Stack.Screen>
@@ -68,5 +77,5 @@ function App() {
   );
 }
 
-//module.exports = App;
-module.exports = __DEV__ ? StorybookUI : App;
+module.exports = App;
+//module.exports = __DEV__ ? StorybookUI : App;

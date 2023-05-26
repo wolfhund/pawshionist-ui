@@ -3,7 +3,7 @@ import Header from './Header';
 import Body from './Body';
 
 const HCard = ({ children }) => (
-  <View className="flex flex-row max-w-full rounded-lg shadow-lg bg-white">
+  <View className="flex flex-row max-w-full rounded-lg shadow-lg bg-white mb-6">
     {children}
   </View>
 );

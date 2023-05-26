@@ -6,7 +6,7 @@ export default Container = ({
   children
 }) => (
   <View
-    className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${customClassName}`}
+    className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-3 ${customClassName}`}
     style={customStyle}
   >
     {children}
