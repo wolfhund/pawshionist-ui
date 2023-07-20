@@ -49,18 +49,43 @@ const HomeScreen = () => {
 
 const DetailsScreen = () => <Text>test</Text>
 
+const Home = () => {
+  const petPhoto = require('./assets/cat.jpg');
+  const infoMock = {
+    name: 'Snowflake',
+    breed: 'Selkirk Rex',
+    owner: { firstName: 'John', lastName: 'Connor', phone: '123-123-123' }
+  };
+  return (<Container>
+    <PetSearchBar />
+    <PetCard info={infoMock} photo={petPhoto} />
+    <PetCard info={infoMock} photo={petPhoto} />
+  </Container>)
+};
+
+
+
+const HomeStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={Home} />
+    </Stack.Navigator>
+  );
+};
+
 function App() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <NavigationContainer>
+        <NavigationContainer>            
+          <Navbar title="Pawshionist" />
           <Tab.Navigator
             initialRouteName="Navigate"
             screenOptions={{ headerShown: false }}
           >
-            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Home" component={HomeStack} />
             <Tab.Screen name="Register" component={DetailsScreen} />
-          </Tab.Navigator>
+          </Tab.Navigator>          
         </NavigationContainer>
       </GestureHandlerRootView>
     </SafeAreaProvider>
