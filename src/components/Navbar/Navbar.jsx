@@ -11,7 +11,7 @@ export default Navbar = ({ title, style }) => {
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-        backgroundColor: 'teal',
+        backgroundColor: '#00CED1',
         justifyContent: 'center',
         alignItems: 'center',
       }}
