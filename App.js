@@ -54,23 +54,13 @@ function App() {
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName="Home1"
+          <Tab.Navigator
+            initialRouteName="Navigate"
             screenOptions={{ headerShown: false }}
           >
-            <Stack.Screen name="Home2">
-              {() => (
-                <Tab.Navigator
-                  initialRouteName="Navigate"
-                  screenOptions={{ headerShown: false }}
-                >
-                  <Tab.Screen name="Home" component={HomeScreen} />
-                  <Tab.Screen name="Register" component={DetailsScreen} />
-                </Tab.Navigator>
-              )}
-            </Stack.Screen>
-            <Stack.Screen name="Details" component={DetailsScreen} />
-          </Stack.Navigator>
+            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Register" component={DetailsScreen} />
+          </Tab.Navigator>
         </NavigationContainer>
       </GestureHandlerRootView>
     </SafeAreaProvider>
