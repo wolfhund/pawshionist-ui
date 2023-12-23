@@ -1,8 +1,9 @@
-import { Text, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 export default Navbar = ({ title, style }) => {
-  const insets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets()
+
   return (
     <View
       style={{
@@ -20,5 +21,5 @@ export default Navbar = ({ title, style }) => {
         {title}
       </Text>
     </View>
-  );
-};
+  )
+}

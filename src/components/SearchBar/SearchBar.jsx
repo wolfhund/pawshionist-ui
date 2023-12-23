@@ -1,5 +1,5 @@
-import { View, TextInput } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { View, TextInput } from 'react-native'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 const SearchBar = ({ className: customClassName, style: customStyle }) => (
   <View
@@ -16,6 +16,6 @@ const SearchBar = ({ className: customClassName, style: customStyle }) => (
       <Ionicons name="search-outline" size={30} />
     </View>
   </View>
-);
+)
 
-export default SearchBar;
+export default SearchBar

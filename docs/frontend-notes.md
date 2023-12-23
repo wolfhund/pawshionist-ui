@@ -22,3 +22,12 @@ Still investigating...
 ## Tailwind CSS
 
 Can be set with create-react-native-app, otherwise the installation looks more complicated and fails.
+
+
+# Theme colors to consider
+FFDAB9
+00CED1  # prospect
+FF6F61
+
+# Inspired designes
+https://www.behance.net/gallery/173889881/UI-Case-Study-Pet-Care-Mobile-Application-HAPPY-TAILS?tracking_source=search_projects|pet+grooming+company+mobile+app
